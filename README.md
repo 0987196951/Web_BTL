@@ -1,8 +1,6 @@
 # Web_BTL
 # https://www.vietnambooking.com/
 # Làm form đăng nhập, quản lý và người dùng dùng chung 1 giao diện đăng nhập
-# Bỏ trang Pages, Blog, Contact bỏ map
-# Thêm 1 trang hiển thị chi tiết của Phòng khi bấm vào 1 phòng bất kì
 # Thêm 1 form đăng nhập 1 form cho cả 2
 # Thêm 1 giao diện của người quản lý khách sạn hiển thị tất cả phòng của khách sạn, thêm sửa xóa chi tiết phòng
 # Hiện thị phòng chỉ có hình ảnh và description ngay bên cạnh (số lượng người tối đa, giá, dịch vụ)
