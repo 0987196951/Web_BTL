@@ -37,10 +37,7 @@ public class HotelController {
 	public ResponseEntity<Hotel> showHotelOfManager(@PathVariable Long managerId){
 		Optional<Manager> manageropt = managerRepo.findById(managerId);
 		if(manageropt.isPresent()) {
-			Optional<Hotel> hotel = hotelRepo.findById(manageropt.get().getId());
-			if(hotel.isPresent()) {
-				return new ResponseEntity<>(hotel.get(), HttpStatus.OK);
-			}
+				return new ResponseEntity<>(manageropt.get().getHotel(), HttpStatus.OK);
 		}
 		return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 	}
