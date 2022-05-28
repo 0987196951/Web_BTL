@@ -38,10 +38,8 @@ public class Hotel implements Serializable{
 	private String description;
 	
 	@OneToMany
-	@MapsId("hotelId")
 	private List<Room> rooms = new ArrayList<>();
 	
 	@OneToMany
-	@MapsId("hotelPictureId")
 	private List<PictureHotel> pictures = new ArrayList<>();
 }

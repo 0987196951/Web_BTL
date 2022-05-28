@@ -21,7 +21,6 @@ public class PictureHotel {
 	private Long id;
 	
 	@ManyToOne
-	@MapsId("hotelPictureId")
 	@JoinColumn(name="hotelId")
 	Hotel hotel;
 	

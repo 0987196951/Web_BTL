@@ -35,8 +35,7 @@ public class Bill {
 	@ManyToOne
 	@MapsId("bookingId")
 	@JoinColumns({
-		@JoinColumn(name="userId"),
-		@JoinColumn(name="managerId"),
+	
 		@JoinColumn(name="bookingId")
 	})
 	Booking booking;

@@ -42,6 +42,5 @@ public class User implements Serializable {
 	private String note;
 	
 	@OneToMany
-	@MapsId("userId")
 	private List<Booking> bookings = new ArrayList<>();
 }

@@ -33,27 +33,14 @@ public class Booking implements Serializable {
 	
 	private String note;
 	
-	@EmbeddedId
-	BookingKey idKey;
-	
-	@ManyToOne
-	@MapsId("userId")
-	@JoinColumn(name="userId")
-	User user;
-	@ManyToOne
-	@MapsId("managerId")
-	@JoinColumn(name="managerId")
-	Manager manager;
 	@PrePersist
 	void bookingDate() {
 		this.bookingDate = new Date();
 	}
 	
 	@OneToMany
-	@MapsId("bookingId")
 	private List<BookedRoom> bookedRooms = new ArrayList<>();
 	
 	@OneToMany
-	@MapsId("bookingId")
 	private List<Bill> bills = new ArrayList<>();
 }

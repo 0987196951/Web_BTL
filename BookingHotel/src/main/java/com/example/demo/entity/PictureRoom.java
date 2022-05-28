@@ -20,10 +20,6 @@ public class PictureRoom {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@ManyToOne
-	@MapsId("roomIdPicture")
-	@JoinColumn(name="roomId")
-	Room room;
 	
 	@NotNull
 	@Lob

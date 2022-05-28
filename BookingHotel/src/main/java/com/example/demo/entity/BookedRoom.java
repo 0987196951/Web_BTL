@@ -23,20 +23,10 @@ public class BookedRoom implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@EmbeddedId
-	BookedRoomKey key;
-	
 	@ManyToOne
-	@MapsId("roomId")
-	@JoinColumn(name="roomId")
-	Room room;
-	@ManyToOne
-	@MapsId("bookingId")
 	@JoinColumns(
 			{
-				@JoinColumn(name="bookingId"),
-				@JoinColumn(name="userId"),
-				@JoinColumn(name="managerId")
+				@JoinColumn(name="bookingId")
 			})
 	Booking booking;
 	@NotNull

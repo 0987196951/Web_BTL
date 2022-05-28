@@ -21,6 +21,11 @@ import lombok.Data;
 @Data
 @Entity
 public class Room implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7610500907207411073L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -36,20 +41,13 @@ public class Room implements Serializable {
 	
 	private String description;
 	
-	@ManyToOne
-	@MapsId("hotelId")
-	@JoinColumn(name="hotelId")
-	Hotel hotel;
 	
 	@OneToMany
-	@MapsId("roomId")
 	private List<BookedRoom> bookedRooms = new ArrayList<>();
 	
 	@OneToMany
-	@MapsId("roomIdPicture")
 	private List<PictureRoom> pictures = new ArrayList<>();
 	
 	@OneToMany
-	@MapsId("roomIdService")
 	private List<Service> services = new ArrayList<>();
 }

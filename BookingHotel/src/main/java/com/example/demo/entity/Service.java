@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
@@ -25,8 +26,4 @@ public class Service {
 	
 	private String description;
 	
-	@OneToMany
-	@MapsId("roomIdService")
-	@JoinColumn(name="roomId")
-	Room room;
 }

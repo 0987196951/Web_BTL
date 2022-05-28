@@ -31,6 +31,5 @@ public class Manager implements Serializable {
 	private String fullName;
 	
 	@OneToMany
-	@MapsId("managerId")
 	private List<Booking> bookings = new ArrayList<>();
 }
