@@ -33,7 +33,7 @@ public class BookedRoom implements Serializable {
 	private Float price;
 	
 	@NotNull
-	private boolean isCheckin;
+	private Boolean isCheckin;
 	
 	private Float selloff;
 	

@@ -6,7 +6,9 @@ import java.util.List;
 
 
 import javax.annotation.Generated;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,7 +36,7 @@ public class Room implements Serializable {
 	private String name;
 	
 	@NotNull
-	private String type;
+	private Long type;
 	
 	@NotNull
 	private Float price;
@@ -42,12 +44,12 @@ public class Room implements Serializable {
 	private String description;
 	
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<BookedRoom> bookedRooms = new ArrayList<>();
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<PictureRoom> pictures = new ArrayList<>();
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Service> services = new ArrayList<>();
 }
