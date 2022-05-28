@@ -32,11 +32,4 @@ public class Bill {
 
 	private String note;
 	
-	@ManyToOne
-	@MapsId("bookingId")
-	@JoinColumns({
-	
-		@JoinColumn(name="bookingId")
-	})
-	Booking booking;
 }

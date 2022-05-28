@@ -23,12 +23,6 @@ public class BookedRoom implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@ManyToOne
-	@JoinColumns(
-			{
-				@JoinColumn(name="bookingId")
-			})
-	Booking booking;
 	@NotNull
 	private Date checkin;
 	

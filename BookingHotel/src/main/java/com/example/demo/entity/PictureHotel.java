@@ -20,9 +20,6 @@ public class PictureHotel {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@ManyToOne
-	@JoinColumn(name="hotelId")
-	Hotel hotel;
 	
 	@NotNull
 	@Lob
