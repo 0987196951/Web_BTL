@@ -37,4 +37,12 @@ public class BookedRoom implements Serializable {
 	
 	private Float selloff;
 	
+	@ManyToOne
+	@JoinColumn(name="bookingId")
+	Booking booking;
+	
+	@ManyToOne
+	@JoinColumn(name="roomId")
+	Room room;
+	
 }

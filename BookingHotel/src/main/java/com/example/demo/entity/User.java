@@ -43,6 +43,9 @@ public class User implements Serializable {
 	
 	private String note;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="user")
 	private List<Booking> bookings = new ArrayList<>();
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,  mappedBy="user")
+	private List<Bill> bills = new ArrayList<>();
 }

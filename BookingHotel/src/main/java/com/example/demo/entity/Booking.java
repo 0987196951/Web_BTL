@@ -40,9 +40,18 @@ public class Booking implements Serializable {
 		this.bookingDate = new Date();
 	}
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="booking")
 	private List<BookedRoom> bookedRooms = new ArrayList<>();
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="booking")
 	private List<Bill> bills = new ArrayList<>();
+	
+	@ManyToOne
+	@JoinColumn(name="userId")
+	User user;
+	
+	@ManyToOne
+	@JoinColumn(name="managerId")
+	Manager manager;
+	
 }

@@ -10,6 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
@@ -32,6 +34,10 @@ public class Manager implements Serializable {
 	@NotNull
 	private String fullName;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "manager")
 	private List<Booking> bookings = new ArrayList<>();
+	
+	@ManyToOne
+	@JoinColumn(name="hotelId")
+	Hotel hotel;
 }

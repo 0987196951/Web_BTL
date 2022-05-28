@@ -29,7 +29,13 @@ public class Bill {
 	
 	@NotNull
 	private String patymentType;
-
 	private String note;
 	
+	@ManyToOne
+	@JoinColumn(name="bookingId")
+	Booking booking;
+	
+	@ManyToOne
+	@JoinColumn(name="userId")
+	User user;
 }

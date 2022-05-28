@@ -43,13 +43,16 @@ public class Room implements Serializable {
 	
 	private String description;
 	
+	@ManyToOne
+	@JoinColumn(name = "hotelId")
+	Hotel hotel;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="room")
 	private List<BookedRoom> bookedRooms = new ArrayList<>();
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="room")
 	private List<PictureRoom> pictures = new ArrayList<>();
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="room")
 	private List<Service> services = new ArrayList<>();
 }
